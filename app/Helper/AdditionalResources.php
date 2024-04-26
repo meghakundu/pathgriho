@@ -97,7 +97,7 @@ class AdditionalResources {
   }
 
   public static function HomePageSlider(){
-    return Slider::oldest('serial')->get();
+    return Slider::oldest('serial')->where('status',1)->get();
   }
 
   public static function Blog(string $type){
