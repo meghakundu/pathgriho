@@ -33,18 +33,18 @@
         </h3>
         <div class="md:grid md:grid-cols-2 xl:grid-cols-4 gap-3 justify-center">
 
-          @foreach ($board_members as $board_member)
+          @foreach ($managements as $item)
             <div class="bg-primary w-full md:w-90/100 rounded-t-[60px] relative py-5 shadow-lg font-oswald mt-24">
               <figure class="w-full flex items-center justify-center">
                 <img
                   class="w-44 h-44 rounded-full border-8 border-white shadow-md -mt-24"
-                  src="{{ asset($board_member->image) }}"
-                  alt="{{ $board_member->title }}"
+                  src="{{ asset($item->image) }}"
+                  alt="{{ $item->name }}"
                 />
               </figure>
 
-              <h3 class="text-2xl font-semibold text-slate-100 uppercase text-center mb-1 mt-6">{{ $board_member->name }}</h3>
-              <p class="text-xl text-slate-100 font-bold tracking-wide leading-[1.78rem] opacity-70 text-center">{{ $board_member->position }}</p>
+              <h3 class="text-2xl font-semibold text-slate-100 uppercase text-center mb-1 mt-6">{{ $item->name }}</h3>
+              <p class="text-xl text-slate-100 font-bold tracking-wide leading-[1.78rem] opacity-70 text-center">{{ $item->position }}</p>
             </div>
           @endforeach
              
@@ -57,18 +57,18 @@
         </h3>
         <div class="md:grid md:grid-cols-2 xl:grid-cols-3 gap-8 justify-center mt-20">
 
-          @foreach ($managements as $management)
+          @foreach ($junior_managements as $junior_management)
             <div class="bg-primary w-full md:w-90/100 rounded-t-[60px] relative py-5 shadow-lg font-oswald mt-24">
               <figure class="w-full flex items-center justify-center">
                 <img
                   class="w-44 h-44 rounded-full border-8 border-white shadow-md -mt-24"
-                  src="{{ asset($management->image) }}"
-                  alt="{{ $management->title }}"
+                  src="{{ asset($junior_management->image) }}"
+                  alt="{{ $junior_management->name }}"
                 />
               </figure>
 
-              <h3 class="text-2xl font-semibold text-slate-100 uppercase text-center mb-1 mt-6">{{ $management->name }}</h3>
-              <p class="text-xl text-slate-100 font-bold tracking-wide leading-[1.78rem] opacity-70 text-center">{{ $management->position }}</p>
+              <h3 class="text-2xl font-semibold text-slate-100 uppercase text-center mb-1 mt-6">{{ $junior_management->name }}</h3>
+              <p class="text-xl text-slate-100 font-bold tracking-wide leading-[1.78rem] opacity-70 text-center">{{ $junior_management->position }}</p>
             </div>
           @endforeach
                
@@ -82,18 +82,18 @@
 
         <div class="md:grid md:grid-cols-2 xl:grid-cols-4 gap-3 justify-center mt-20">
 
-          @foreach ($junior_managements as $junior_management)
+          @foreach ($board_members as $board_member)
             <div class="bg-primary w-full md:w-90/100 rounded-t-[60px] relative py-5 shadow-lg font-oswald mt-24">
               <figure class="w-full flex items-center justify-center">
                 <img
                   class="w-44 h-44 rounded-full border-8 border-white shadow-md -mt-24"
-                  src="{{ asset($junior_management->image) }}"
-                  alt="{{ $junior_management->title }}"
+                  src="{{ asset($board_member->image) }}"
+                  alt="{{ $board_member->name}}"
                 />
               </figure>
 
-              <h3 class="text-2xl font-semibold text-slate-100 uppercase text-center mb-1 mt-6">{{ $junior_management->name }}</h3>
-              <p class="text-xl text-slate-100 font-bold tracking-wide leading-[1.78rem] opacity-70 text-center">{{ $junior_management->position }}</p>
+              <h3 class="text-2xl font-semibold text-slate-100 uppercase text-center mb-1 mt-6">{{ $board_member->name }}</h3>
+              <p class="text-xl text-slate-100 font-bold tracking-wide leading-[1.78rem] opacity-70 text-center">{{ $board_member->position }}</p>
             </div> 
           @endforeach
               
