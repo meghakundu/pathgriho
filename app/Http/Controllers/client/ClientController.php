@@ -31,6 +31,10 @@ class ClientController extends Controller
         $works_areas_details = WorksAreaDetails::where('status', true)->where('type', 'Home Page')->oldest('serial')->get();
         $testimonial = Testimonial::latest('id')->first();
         $workout_section = WorkoutSection::latest('id')->first();
+        
+        if (request('search')) {
+            $blogs = Blog::where('title', 'like', '%' . request('search') . '%')->get();
+        } 
 
         return view("client.home", compact("blogs", "testimonial", "secondary_blogs", "workout_section", "featured_news_and_articles", "works_areas_details"));
     }

@@ -110,11 +110,11 @@
 
             <form
               class="search absolute 2xl:-left-10 2xl:top-14 mt-1 top-24 left-10 z-50 p-4 bg-primary hidden items-center justify-center gap-4 2xl:hidden group-[.active-search]:flex"
-            >
+            action="/">
               <input
                 type="search"
                 class="text-lg font-mono w-full text-secondary bg-slate-100 px-6 py-2 border-none outline-none focus:bg-slate-200 md:min-w-72"
-                placeholder="Search here... "
+                placeholder="Search here... " name="search" value="{{ request('search') }}"
               />
               <button
                 role="button"

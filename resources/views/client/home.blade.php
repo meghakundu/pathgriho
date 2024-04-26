@@ -16,8 +16,8 @@
       <div class="container flex flex-wrap gap-[5%] w-full py-10">
         <!-- Card 1 -->
 
-        @foreach ($blogs as $blog)
-          <div class="lg:w-30/100 w-full border border-solid border-slate-200 rounded-[50px]">
+        @forelse ($blogs as $blog)
+          <div class="lg:w-30/100 w-full border border-solid border-slate-200 rounded-[50px]"  @if(count($blogs) == 2) style="width:46%" @endif>
             <figure class="before:content-[''] before:pt-[65%] before:block relative">
             
               <img
@@ -46,7 +46,9 @@
               </a>
             </div>
           </div>
-        @endforeach 
+          @else
+          <p>No blog found.</p>
+        @endforelse
       </div>
     </article>
 
@@ -188,7 +190,7 @@
         <div class="flex flex-wrap gap-[5%] w-full py-10">
           
           @foreach ($secondary_blogs as $blog)
-            <div class="sm:w-45/100 lg:w-30/100 w-full border border-solid border-slate-200 rounded-[50px] mb-2">
+            <div class="sm:w-45/100 lg:w-30/100 w-full border border-solid border-slate-200 rounded-[50px] mb-2"  @if(count($secondary_blogs) == 2) style="width:46%" @endif>
               <div class="w-full bg-white p-4 text-justify font-oswald">
                 <h3
                   class="p-2 text-3xl font-semibold text-primary capitalize text-center flex flex-col items-center justify-center"
